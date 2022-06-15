@@ -1,0 +1,426 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+
+/*--- Spinner for Single Job page pre load application ---*/
+#spiner {
+  margin: 50px 0 30px 0;
+  text-align: center;
+  p {
+    font-size: 20px;
+  }
+  .loading {
+    position: absolute;
+    &::after {
+      display: inline-block;
+      animation: dotty steps(1,end) 1.5s infinite;
+      content: '';
+    }
+  }
+}
+@keyframes dotty {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
+    100% { content: ''; }
+}
+.no-result {
+  margin: 0 auto;
+  text-align: center;
+  background: #f4f4f4;
+  padding: 30px;
+  h2 {
+    color: #1faade;
+  }
+  .token-message {
+    text-transform: capitalize;
+  }
+}
+.container {
+  padding: 50px 0;
+  .careers {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  h1.page-title {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d7d7d7;
+  }
+}
+.content-area {
+ padding: 20px 0 50px 0;
+}
+.filters {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+  a {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  select {
+      border: 1px solid #e3e3e3;
+      height: 40px;
+      width: 200px;
+      margin: 40px 40px 40px 0;
+      background-color: #ffffff;
+  }
+}
+
+.post-type-archive-jobs {
+  .general-applications {
+    max-width: 650px;
+    margin: 0 auto;
+    margin-top: 100px;
+    @media only screen and (min-width: 768px) {
+      p {
+        text-align: center;
+        max-width: 550px;
+        display: block;
+        margin: 0 auto 30px auto;
+      }
+
+      .title-col {
+        width: calc(100% - 150px);
+      }
+      .link-col {
+        width: 150px;
+      }
+    }
+    h2 {
+      text-align: center;
+    }
+    .location-col,
+    .team-col {
+      width: 0;
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    h3 {
+      text-align: center;
+    }
+    .title-col {
+      border-bottom: none;
+      padding: 0;
+    }
+  }
+}
+.team-wrap {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #d7d7d7;
+}
+.job-wrap,
+.team-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+.job-wrap {
+  border-top: 1px solid #d7d7d7;
+  a.btn-default {
+      border: 2px solid #EAAA00;
+      color: #EAAA00;
+      font-family: ProximaNova-Semibold, sans-serif;
+      font-size: 14px;
+      padding: 1em 1.5em;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      white-space: nowrap;
+  }
+}
+.title-col {
+  width: 30%;
+  padding-right: 15px;
+  h3 a {
+    font-size: 18px;
+    color: #444546;
+  }
+}
+.team-col {
+  width: 25%;
+  padding-right: 15px;
+}
+.location-col {
+  width: 30%;
+  padding-right: 15px;
+  span {
+    line-height: 18px;
+    display: block;
+    margin-bottom: 7px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+.link-col {
+  width: 15%;
+}
+.no-jobs {
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+}
+.team-hidden {
+  display: none !important;
+}
+
+#signifyd-offices {
+  &.sao-paulo .brazil,
+  &.mexico-city .mexico,
+  &.san-jose .san-jose,
+  &.london .london,
+  &.denver .denver,
+  &.belfast .belfast,
+  &.new-york-city .new-york-city {
+    display: none!important;
+  }
+  background: #f3f3f3;
+}
+.careers-page h3.block-title,
+#signifyd-offices h3 {
+  font-size: 30px;
+  text-align: center;
+}
+.careers-page h3.block-title {
+  margin-bottom: 30px;
+}
+.container-location-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0 0 0;
+  .location-icon {
+    position: relative;
+    margin: 12px;
+    text-align: center;
+    p {
+      color: black;
+      position: relative;
+      bottom: 35px;
+      font-size: 14px;
+      opacity: 0.5;
+      text-align: center;
+      font-weight: normal;
+      transition: 0.75s;
+    }
+    &:hover {
+      p {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+    }
+    img {
+        border-radius: 50%;
+        width: 160px;
+        transition: 0.75s;
+        &:hover {
+            box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+    }
+
+  }
+  @media only screen and (max-width: 993px) {
+    display: block;
+    text-align: center;
+    .location-icon {
+      display: inline-block;
+      width: 33%;
+      margin: 25px 0;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .location-icon {
+      width: 49%;
+      margin: 0;
+    }
+  }
+}
+
+/*------- Single Job page ---------*/
+body.single .fl-page-content {
+  background: white!important;
+}
+.container-job {
+	padding: 50px auto 80px auto;
+}
+#wrapper-list {
+  .lacation {
+    width: calc(100% - 180px);
+  	margin-bottom: 20px;
+    opacity: 0.5;
+    font-weight: normal;
+  }
+  .button-wrap {
+  	text-align: center;
+  }
+  .button {
+      font-family: ProximaNova-Semibold, sans-serif !important;
+      border: none !important;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      -webkit-border-radius: 0 !important;
+      -moz-border-radius: 0 !important;
+      border-radius: 0 !important;
+      background-color: #EAAA00 !important;
+      font-size: 13px !important;
+      line-height: 1 !important;
+      padding: 15px 30px 14px !important;
+      text-transform: uppercase !important;
+      text-shadow: none !important;
+      width: auto !important;
+      color: #ffffff !important;
+      letter-spacing: 1.2px !important;
+      margin-top: 1.5em !important;
+      min-height: 50px;
+  }
+  .title-wrap {
+  	position: relative;
+  	width: 100%;
+    h1 {
+    	width: calc(100% - 150px);
+    	display: inline-block;
+    }
+  }
+  h3#application {
+  	margin: 50px 0 20px 0;
+  	text-align: center;
+  }
+  .form-wrap {
+  	max-width: 600px;
+  	margin: 0 auto;
+  	position: relative;
+    label {
+    	margin: 0;
+    }
+  }
+}
+
+/* General Applications */
+.careers-page {
+  .general-applications {
+    h2 {
+      text-align: center;
+    }
+    .link-col,
+    .title-col {
+      width: 100%!important;
+      text-align: center;
+    }
+    .title-col h3 a {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 35px;
+    }
+    &.team-wrap {
+      margin-top: 100px;
+      border: none;
+    }
+    .job-wrap {
+      border: none;
+    }
+    .location-col,
+    .team-col {
+      display: none;
+    }
+  }
+}
+@media only screen and (max-width: 993px) {
+  .link-col {
+    width: 20%;
+  }
+  .location-col {
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .general-applications {
+    &.team-wrap {
+      margin-bottom: 0!important;
+    }
+    .title-col {
+      padding: 0;
+    }
+    h3 {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+  .team-header {
+    display: none;
+  }
+  .job-wrap {
+    display: block;
+    & > div {
+      width: 100%;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: solid 1px #ececec;
+    }
+  }
+  .location-col:before {
+    content: 'Location:\00a0\00a0';
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    color: #183456;
+    min-width: 7em;
+    position: absolute;
+    left: 0;
+    margin-top: 3px;
+  }
+  .title-col {
+    padding-bottom: 0;
+  }
+  .location-col,
+  .team-col {
+    padding-left: 7em;
+    position: relative;
+  }
+  .team-col:before {
+    content: 'Team:\00a0\00a0';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    color: #183456;
+    margin-top: 3px;
+  }
+  .job-wrap .link-col a {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .job-wrap .link-col {
+    margin-top: 25px;
+    border-bottom: none;
+  }
+  .filters {
+    display: block;
+  }
+  .filters select {
+    margin: 0;
+  }
+  #wrapper-list .lacation,
+  #wrapper-list .title-wrap h1{
+    width: 100%;
+  }
+  #wrapper-list .button-main {
+    width: 100;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

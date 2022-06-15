@@ -1,0 +1,14 @@
+#jobs-admin {
+  font-size: 14px;
+}
+
+#jobs-admin span.label {
+  display: inline-block;
+  width: 210px;
+  font-weight: 600;
+  color: #1d2327;
+}
+
+#jobs-admin select {
+  width: 150px;
+}
